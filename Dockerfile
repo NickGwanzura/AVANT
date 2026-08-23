@@ -1,0 +1,29 @@
+FROM node:20-alpine AS build
+
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+FROM node:20-alpine AS runtime
+
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+
+COPY --from=build /app/package.json /app/package-lock.json ./
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/app ./app
+COPY --from=build /app/lib ./lib
+COPY --from=build /app/public ./public
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/.vinext ./.vinext
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start", "--", "--hostname", "0.0.0.0"]

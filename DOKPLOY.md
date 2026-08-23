@@ -11,4 +11,10 @@ This project is prepared for Docker-based deployment in Dokploy.
 5. Point the domain to the application and enable HTTPS.
 6. Deploy from the desired branch.
 
-The Docker image runs the production Vinext server on `0.0.0.0:3000`. No local `.env` file is required for the current site. If environment variables are added later, set them in Dokploy rather than committing secrets.
+The Docker image runs the production Vinext server on `0.0.0.0:3000`. Set the following environment variables in Dokploy when enabling the production admin backend:
+
+- `DATABASE_URL` — PostgreSQL connection string
+- `AUTH_SECRET` — long random Auth.js secret
+- `AUTH_URL` — public site URL
+
+The current `/admin` screen is a local browser-storage prototype. It is intentionally ready to be replaced by PostgreSQL + Auth.js once the Dokploy database and domain are available. Do not treat browser storage as production authentication or persistence.

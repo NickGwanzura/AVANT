@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+.mission-grid{grid-template-columns:repeat(3,1fr)!important}.mission-grid p,.mission-grid li{color:#606060;font-size:15px;line-height:1.6;max-width:360px}.mission-grid ul{list-style:none;margin:0;padding:0}.mission-grid li{border-top:1px solid #cbd7da;padding:12px 0}.about-url{color:#006182;font-family:Manrope;font-size:clamp(30px,5vw,70px);font-weight:700;letter-spacing:-.08em;margin-top:120px}
+@media(max-width:760px){.mission-grid{grid-template-columns:1fr!important}}
+.mission-grid{grid-template-columns:repeat(3,1fr)!important}.mission-grid p,.mission-grid li{color:#606060;font-size:15px;line-height:1.6;max-width:360px}.mission-grid ul{list-style:none;margin:0;padding:0}.mission-grid li{border-top:1px solid #cbd7da;padding:12px 0}.about-url{color:#006182;font-family:Manrope;font-size:clamp(30px,5vw,70px);font-weight:700;letter-spacing:-.08em;margin-top:120px}
 /* Use the supplied Avant SVG wordmark everywhere the text lockup appears. */
 .wordmark{background:url('/avant-logo-transparent.png') center/contain no-repeat;display:block;filter:none;font-size:0!important;color:transparent!important;height:42px;width:142px}.wordmark span{display:none!important}.wordmark img{display:none}
 :root{--header-bg:rgba(255,255,255,.94)}

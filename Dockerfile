@@ -22,7 +22,6 @@ COPY --from=build /app/app ./app
 COPY --from=build /app/lib ./lib
 COPY --from=build /app/public ./public
 COPY --from=build /app/dist ./dist
-COPY --from=build /app/.vinext ./.vinext
 
 EXPOSE 3000
 

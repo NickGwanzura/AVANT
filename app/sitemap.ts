@@ -1,0 +1,3 @@
+import type { MetadataRoute } from "next";
+import { projects } from "../lib/content";
+export default function sitemap(): MetadataRoute.Sitemap { const base = "https://avantgroup.co.zw"; const pages = ["", "/work", "/services", "/photography", "/film", "/about", "/clients", "/contact", "/privacy", "/terms"]; return [...pages.map(path => ({ url: `${base}${path}`, lastModified: new Date(), changeFrequency: path === "" ? "weekly" as const : "monthly" as const, priority: path === "" ? 1 : .7 })), ...projects.map(project => ({ url: `${base}/work/${project.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: .8 }))]; }

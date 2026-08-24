@@ -1,0 +1,75 @@
+/* Keep hero actions clear of the persistent slide controls. */
+.hero-premium {
+  min-height: max(100svh, 720px);
+}
+
+.hero-premium .hero-copy {
+  bottom: clamp(112px, 12svh, 150px);
+  top: auto;
+}
+
+.hero-premium .hero-copy h1 {
+  font-size: clamp(64px, min(10.5vw, 14svh), 160px);
+}
+
+.hero-premium .hero-actions {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero-premium .hero-meta {
+  bottom: 28px;
+}
+
+.hero-premium .hero-controls {
+  gap: 8px;
+}
+
+.hero-premium .hero-controls > span {
+  margin-right: 12px;
+}
+
+.hero-premium .hero-controls button {
+  height: 44px;
+  padding: 20px 7px;
+  width: 44px;
+}
+
+@media (max-width: 760px) {
+  .hero-premium .hero-copy {
+    bottom: 136px;
+    left: 8vw;
+    right: 8vw;
+    top: auto;
+  }
+
+  .hero-premium .hero-copy h1 {
+    font-size: clamp(54px, min(21vw, 12svh), 82px) !important;
+  }
+
+  .hero-premium .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-premium .hero-actions .button {
+    max-width: 310px;
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .hero-premium .hero-meta {
+    align-items: flex-end;
+    bottom: 22px;
+    gap: 16px;
+  }
+
+  .hero-premium .hero-controls {
+    gap: 4px;
+  }
+
+  .hero-premium .hero-controls > span {
+    display: none;
+  }
+}

@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Admin Login · Avant Creative Group",
   description: "Secure access to the Avant content studio.",
+  robots: { index: false, follow: false },
 };
 
 const errors: Record<string, string> = {

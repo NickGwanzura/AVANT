@@ -1,4 +1,7 @@
 import { SiteFooter, SiteHeader } from "../../components/marketing";
+import { pageMetadata } from "../../lib/seo";
+
+export const metadata = pageMetadata("Selected Clients", "See brands and organisations that trust Avant Creative Group for photography, film and visual storytelling in Zimbabwe.", "/clients");
 
 const clients = [
   ["National Foods", "client-1.png"], ["African Sun", "client-2.png"], ["Generation Health", "client-3.png"], ["Elevate Trust", "client-4.png"], ["Sir Albert Nyabinde", "client-5.png"], ["BeraMasamba", "client-6.png"],

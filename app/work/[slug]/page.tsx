@@ -10,7 +10,7 @@ async function projectFor(slug: string) { try { return await findProject(slug); 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const project = await projectFor(slug);
   if (!project) return { title: "Project not found · Avant Creative Group" };
-  return { title: `${project.title} · Avant Creative Group`, description: project.summary, openGraph: { title: project.title, description: project.summary, type: "article", images: [{ url: project.image, alt: project.title }] }, twitter: { card: "summary_large_image", title: project.title, description: project.summary, images: [project.image] } };
+  return { title: project.title, description: project.summary, alternates: { canonical: `/work/${project.slug}` }, openGraph: { title: `${project.title} | Avant Creative Group`, description: project.summary, url: `/work/${project.slug}`, siteName: "Avant Creative Group", locale: "en_ZW", type: "article", images: [{ url: project.image, alt: project.title }] }, twitter: { card: "summary_large_image", title: `${project.title} | Avant Creative Group`, description: project.summary, images: [project.image] } };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

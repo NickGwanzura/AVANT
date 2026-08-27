@@ -1,3 +1,5 @@
 import { SiteFooter, SiteHeader } from "../../components/marketing";
 import ContactForm from "./contact-form";
+import { pageMetadata } from "../../lib/seo";
+export const metadata = pageMetadata("Book Photography or Film", "Contact Avant Creative Group in Harare to discuss commercial photography, video production, events, campaigns or destination content.", "/contact");
 export default function ContactPage() { return <main><SiteHeader /><section className="contact-page"><div className="contact-hero"><p className="eyebrow">Avant / Contact</p><h1>Let’s make<br /><em>something seen.</em></h1></div><div className="contact-grid"><div><p className="body-copy">Tell us about the story, campaign, event or space you want to bring to life. We’ll get back to you with the right next step.</p><div className="contact-details"><a href="mailto:hello@avantgroup.co.zw">hello@avantgroup.co.zw</a><span>Harare, Zimbabwe · Available worldwide</span></div></div><ContactForm /></div></section><SiteFooter /></main>; }

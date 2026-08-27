@@ -17,6 +17,7 @@ test("renders the polished Avant homepage and metadata", async () => {
   assert.match(html, /Stories worth seeing/);
   assert.match(html, /aria-roledescription="carousel"/);
   assert.match(html, /aria-label="Pause slideshow"/);
+  assert.match(html, /aria-label="Avant Creative Group home"><img src="\/avant-logo-black-transparent\.png"/);
   assert.match(html, /href="\/contact">Start a conversation/);
   assert.doesNotMatch(html, /href="mailto:[^"]+">Start a conversation/);
   assert.equal((html.match(/class="project-card /g) ?? []).length, 4, "homepage should show exactly four featured projects");

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { projects as seedProjects, services, type Project } from "../lib/content";
 import { SiteFooter, SiteHeader } from "../components/marketing";
-function ProjectCard({ project, index }: { project: Project; index: number }) { return <a className={`project-card ${project.layout}`} href={`/work/${project.slug}`}><img src={project.image} alt={`${project.title} project image`} loading={index > 1 ? "lazy" : "eager"} width="1200" height="900" /><div className="project-overlay"><span>{project.label}</span><strong>{project.title}</strong><small>{project.year} · {project.location}</small></div><div className="project-index" aria-hidden="true">0{index + 1}</div></a>; }
+function ProjectCard({ project, index }: { project: Project; index: number }) { return <a className={`project-card ${project.layout}${project.image.includes("/gallery/") ? " project-card-catalogue" : ""}`} href={`/work/${project.slug}`}><img src={project.image} alt={`${project.title} project image`} loading={index > 1 ? "lazy" : "eager"} width="1200" height="900" /><div className="project-overlay"><span>{project.label}</span><strong>{project.title}</strong><small>{project.year} · {project.location}</small></div><div className="project-index" aria-hidden="true">0{index + 1}</div></a>; }
 const heroSlides = [
   { eyebrow: "Photography & film · Zimbabwe / Worldwide", title: <>Stories<br /><em>worth seeing.</em></>, intro: "Photography & film for brands, people and places.", image: "/media/gallery/avant-catalogue-03.jpg" },
   { eyebrow: "Destination stories · Hwange / Victoria Falls", title: <>Places<br /><em>worth remembering.</em></>, intro: "Visual stories shaped by place, people and perspective.", image: "/media/hwange-elephant.webp" },

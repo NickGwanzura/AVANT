@@ -5,7 +5,11 @@ import { findProject } from "../../../lib/site-data";
 import { PageIntro, SiteFooter, SiteHeader } from "../../../components/marketing";
 
 export const dynamic = "force-dynamic";
-async function projectFor(slug: string) { try { return (await findProject(slug)) ?? seedProjects.find(project => project.slug === slug) ?? null; } catch { return seedProjects.find(project => project.slug === slug) ?? null; } }
+async function projectFor(slug: string) {
+  const seeded = seedProjects.find(project => project.slug === slug);
+  if (seeded) return seeded;
+  try { return await findProject(slug); } catch { return null; }
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const project = await projectFor(slug);
